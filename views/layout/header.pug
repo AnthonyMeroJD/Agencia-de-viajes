@@ -1,0 +1,14 @@
+header
+ .navegacion
+  .container
+    .row.justify-content-center.justify-content-md-between.align-items-center.py-4
+      .col-md-4.col-6
+        a(href="/")
+          img(src="../../img/logo.svg", alt="s",href="#")   
+      .col-md-8.col-6 
+        nav.mt-5.md-0.nav.justify-content-center.justify-content-md-end          
+            each menu in menus          
+                a(href=`${menu.slug}`).nav-link #{menu.titulo}
+            
+          
+

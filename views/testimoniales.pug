@@ -1,0 +1,29 @@
+extends ./layout/index
+block contenido 
+ main.container.mt-5.mb-5 
+  .h1.text-center.mt-5 Testimonios  
+  blockquote.text-center Lee lo que la gente piensa de nosotros 
+    include  ./Testimonials_Blocks
+  .row
+    .col-md-12 
+
+     h2.d-block.w-100.text-center Agrega un testimonial
+     include ./errors_block 
+     include ./success_block 
+     .row.justify-content-center.col   
+       .col-md-8 
+        form(action="/testimonios" method ="POST")
+         .form-group 
+           label(for="Nombre") nombre
+           input#nombre(class="form-control",
+            type="text",placeHolder="tu nombre", name="nombre",value=nombre)
+         .form-group 
+           label(for="Correo") correo
+           input#correo(class="form-control",
+            type="text",placeHolder=" tu correo", name="correo",value=correo)
+         .form-group 
+           label(for="Mensaje") mensaje
+           textarea#mensaje(class="form-control",type="text",
+           placeHolder="escribe aqui tu mensaje", name="mensaje",rows=3) #{mensaje}
+         input(type="submit").btn.btn-success.btn-block
+

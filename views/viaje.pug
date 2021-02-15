@@ -1,0 +1,49 @@
+extends ./layout/index
+block contenido
+  main.container.mt-5.mb-5
+      .row
+        .col.md-5 
+          img(src=`../img/destinos_${viaje.imagen}_ln.jpg`,
+           alt="about us").img-fluid
+        .col.md-7          
+          h1.text-center #{viaje.titulo}  
+          blockquote #{viaje.descripcion.substring(0,450)}            
+          .d-flex.flex-column.bd-highlight.mb-3
+           .d-flex.bd-highlight.justify-content-center            
+            .bd-highlight             
+               p 
+                svg.icon.icon-tabler.icon-tabler-plane-departure(xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewbox='0 0 24 24' stroke-width='1.5' stroke='#F94D53' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                 path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                 path(d='M15 12h5a2 2 0 0 1 0 4h-15l-3 -6h3l2 2h3l-2 -7h3z' transform='rotate(-15 12 12) translate(0 -1)')
+                 line(x1='3' y1='21' x2='21' y2='21')
+                | #{viaje.fecha_ida}
+            .bd-highlight
+              p           
+               |- #{viaje.fecha_vuelta}  
+               svg.icon.icon-tabler.icon-tabler-plane-arrival(xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewbox='0 0 24 24' stroke-width='1.5' stroke='#F94D53' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                path(d='M15 12h5a2 2 0 0 1 0 4h-15l-3 -6h3l2 2h3l-2 -7h3z' transform='rotate(15 12 12) translate(0 -1)')
+                line(x1='3' y1='21' x2='21' y2='21')
+           .d-flex.bd-highlight.justify-content-center
+            .bd-highlight
+             p
+               svg.icon.icon-tabler.icon-tabler-receipt-2(xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewbox='0 0 24 24' stroke-width='1.5' stroke='#F96D4D' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                path(d='M5 21v-16a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v16l-3 -2l-2 2l-2 -2l-2 2l-2 -2l-3 2')
+                path(d='M14 8h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3h-2.5m2 0v1.5m0 -9v1.5')
+             
+               |#{viaje.precio}$
+           .d-flex.bd-highlight.justify-content-center
+            .bd-highlight 
+             p
+               svg.icon.icon-tabler.icon-tabler-user(xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewbox='0 0 24 24' stroke-width='1.5' stroke='#ED5432' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                circle(cx='12' cy='7' r='4')
+                path(d='M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2')
+               | Disponibles: #{viaje.disponibles}
+
+           .bd-highlight.align-self-center
+             a(href="#").btn.btn-primary Contratar este servicio
+           
+           
+          
